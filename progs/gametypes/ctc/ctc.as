@@ -2,7 +2,7 @@
  * 2010-2012 Seeming
  * A big thanks to Hylith trxxrt and Zaran for their help and their support !
  * 2015 updated by Hylith for Warsow 1.51
- * 2019 updated by Hylith for Warfork release
+ * 2019 updated by Hylith for Warfork
  * @file ctc.as
  * Main file of the CTC gametype
  * based on the "flag's code" of "The Runner" by DrahtMaul
@@ -406,10 +406,11 @@ class Chicken{
             if (dir.z >= 0){
                 if (dir.z < 320){
                     dir.z = 320;
+                    if (player_velocity.z > 0){
+                    	dir.z += (player_velocity.z * 2 / 3);
+	                }
                 }
-                if (player_velocity.z > 0){
-                    dir.z += player_velocity.z;
-                }else if(player_velocity.z == 0){
+                if(player_velocity.z == 0){
                     dir.z *= 1.5;
                 }
             }else if (dir.z < 0){
@@ -425,7 +426,7 @@ class Chicken{
                     dir.z = 170;
                 }
                 if (player_velocity.z < 0) {
-                    dir.z += player_velocity.z;
+                    dir.z += (player_velocity.z * 2 / 3);
                 }
             }
 
@@ -542,10 +543,11 @@ class Chicken{
             if (dir.z >= 0){
                 if (dir.z < 300){
                     dir.z = 300;
+                    if (player_velocity.z > 0){
+	                    dir.z += (player_velocity.z * 2 / 3);
+	                }
                 }
-                if (player_velocity.z > 0){
-                    dir.z += player_velocity.z;
-                }else if(player_velocity.z == 0){
+                if(player_velocity.z == 0){
                     dir.z *= 1.5;
                 }
             }else if (dir.z < 0){
@@ -561,7 +563,7 @@ class Chicken{
                     dir.z = 150;
                 }
                 else if (player_velocity.z < 0) {
-                    dir.z += player_velocity.z;
+                    dir.z += (player_velocity.z * 2 / 3);
                 }
             }
 
@@ -846,11 +848,11 @@ void GT_InitGametype(){
                 + "set g_maplist \"wdm1 wdm2 wdm4 wdm6 wdm7 wdm10 wdm12 wdm13 wdm14 wca1 wca3 wctf1 wctf3 wctf5 wctf6 \" // list of maps in automatic rotation\n"
                 + "set g_maprotation \"2\"   // 0 = same map, 1 = in order, 2 = random\n"
                 + "\n// game settings\n"
-                + "set g_scorelimit \"150\"\n"
+                + "set g_scorelimit \"100\"\n"
                 + "set g_timelimit \"0\"\n"
                 + "set g_warmup_timelimit \"2\"\n"
                 + "set g_match_extendedtime \"0\"\n"
-                + "set g_allow_falldamage \"0\"\n"
+                + "set g_allow_falldamage \"0\"\n" 
                 + "set g_allow_selfdamage \"0\"\n"
                 + "set g_allow_teamdamage \"1\"\n"
                 + "set g_allow_stun \"1\"\n"
@@ -1231,7 +1233,7 @@ bool GT_Command(Client @client, const String &cmdString, const String &argsStrin
         return true;
     }
     return false;
-	}
+}
 	
 void GT_SpawnGametype(){
     chicken.spawn();
