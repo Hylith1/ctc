@@ -929,22 +929,19 @@ void GT_InitGametype(){
     gametype.author = C_GAMETYPE_AUTHOR;
 
 	// precache images that can be used by the scoreboard
-	prcYesIcon = G_ImageIndex("gfx/hud/icons/vsay/yes", true);
-	prcShockIcon = G_ImageIndex("gfx/hud/icons/powerup/quad", true);
-	prcShellIcon = G_ImageIndex("gfx/hud/icons/powerup/warshell", true);
+	prcYesIcon = G_ImageIndex("gfx/hud/icons/vsay/yes");
+	prcShockIcon = G_ImageIndex("gfx/hud/icons/powerup/quad");
+	prcShellIcon = G_ImageIndex("gfx/hud/icons/powerup/warshell");
+    prcChickenIcon = G_ImageIndex( "gfx/ctc/ChickenIcon.tga");
+    prcCarrierIcon = G_ImageIndex( "gfx/ctc/chickenHUD.tga");
 
     //Precache chicken's "In Hand" model
     modelChickenhand = G_ModelIndex( "models/ctc/pouletmain.md3", true);
-	
-    // precache images that can be used by the scoreboard
-    prcYesIcon = G_ImageIndex( "gfx/hud/icons/vsay/yes", true);
-    prcShockIcon = G_ImageIndex( "gfx/hud/icons/powerup/quad", true);
-    prcShellIcon = G_ImageIndex( "gfx/hud/icons/powerup/warshell", true);
-    prcChickenIcon = G_ImageIndex( "gfx/ctc/ChickenIcon.tga", true);
-    prcCarrierIcon = G_ImageIndex( "gfx/ctc/chickenHUD.tga", true);
+
     // precache Chicken's sounds
     prcAnnouncerChickenTaken = G_SoundIndex( "sounds/ctc/taken", true);
     prcAnnouncerChickenDrop = G_SoundIndex( "sounds/ctc/drop", true);
+    
     // precache Crap sounds
     prcAnnouncerPhilippe = G_SoundIndex( "sounds/ctc/philippe", true);
     prcAnnouncerPrecoce = G_SoundIndex( "sounds/ctc/precoce", true);
