@@ -924,31 +924,31 @@ void GT_InitGametype(){
 		G_ConfigString(CS_SCB_PLAYERTAB_TITLES, "Name Clan Score Frags Dfrst Ping " + "C " + " R");
 	}
 
-	// precache images that can be used by the scoreboard
-	prcYesIcon = G_ImageIndex("gfx/hud/icons/vsay/yes");
-	prcShockIcon = G_ImageIndex("gfx/hud/icons/powerup/quad");
-	prcShellIcon = G_ImageIndex("gfx/hud/icons/powerup/warshell");
-
     gametype.title = C_GAMETYPE_NAME;
     gametype.version = C_GAMETYPE_VERSION;
     gametype.author = C_GAMETYPE_AUTHOR;
 
+	// precache images that can be used by the scoreboard
+	prcYesIcon = G_ImageIndex("gfx/hud/icons/vsay/yes", true);
+	prcShockIcon = G_ImageIndex("gfx/hud/icons/powerup/quad", true);
+	prcShellIcon = G_ImageIndex("gfx/hud/icons/powerup/warshell", true);
+
     //Precache chicken's "In Hand" model
-    modelChickenhand = G_ModelIndex( "models/ctc/pouletmain.md3" );
+    modelChickenhand = G_ModelIndex( "models/ctc/pouletmain.md3", true);
 	
     // precache images that can be used by the scoreboard
-    prcYesIcon = G_ImageIndex( "gfx/hud/icons/vsay/yes" );
-    prcShockIcon = G_ImageIndex( "gfx/hud/icons/powerup/quad" );
-    prcShellIcon = G_ImageIndex( "gfx/hud/icons/powerup/warshell" );
-    prcChickenIcon = G_ImageIndex( "gfx/ctc/ChickenIcon.tga" );
-    prcCarrierIcon = G_ImageIndex( "gfx/ctc/chickenHUD.tga" );
+    prcYesIcon = G_ImageIndex( "gfx/hud/icons/vsay/yes", true);
+    prcShockIcon = G_ImageIndex( "gfx/hud/icons/powerup/quad", true);
+    prcShellIcon = G_ImageIndex( "gfx/hud/icons/powerup/warshell", true);
+    prcChickenIcon = G_ImageIndex( "gfx/ctc/ChickenIcon.tga", true);
+    prcCarrierIcon = G_ImageIndex( "gfx/ctc/chickenHUD.tga", true);
     // precache Chicken's sounds
-    prcAnnouncerChickenTaken = G_SoundIndex( "sounds/ctc/taken" );
-    prcAnnouncerChickenDrop = G_SoundIndex( "sounds/ctc/drop" );
+    prcAnnouncerChickenTaken = G_SoundIndex( "sounds/ctc/taken", true);
+    prcAnnouncerChickenDrop = G_SoundIndex( "sounds/ctc/drop", true);
     // precache Crap sounds
-    prcAnnouncerPhilippe = G_SoundIndex( "sounds/ctc/philippe" );
-    prcAnnouncerPrecoce = G_SoundIndex( "sounds/ctc/precoce" );
-    prcAnnouncerPatron = G_SoundIndex( "sounds/ctc/patron" );
+    prcAnnouncerPhilippe = G_SoundIndex( "sounds/ctc/philippe", true);
+    prcAnnouncerPrecoce = G_SoundIndex( "sounds/ctc/precoce", true);
+    prcAnnouncerPatron = G_SoundIndex( "sounds/ctc/patron", true);
 
     // add commands
     G_RegisterCommand( "drop" );
